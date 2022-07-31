@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "gatekeep",
+  "version": "${version}",
+  "name": "gatekeep",
+  "description": "Remove the bar in chat & toast showing message sign status.",
+  "authors": [
+    "thirdsanctuary"
+  ],
+  "contact": {
+    "website": "https://github.com/thirdsanctuary",
+    "repo": "https://github.com/thirdsanctuary/gatekeep"
+  },
+  "license": "LGPL-3.0",
+  "icon": "assets/gatekeep/icon.png",
+  "environment": "client",
+  "entrypoints": {},
+  "mixins": [
+    "gatekeep.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.8",
+    "minecraft": "1.19.1"
+  }
+}
