@@ -4,9 +4,11 @@
   "package": "dev.sanctuary.gatekeep.mixins",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ChatScreenMixin_RemoveIndicatorTooltip"
   ],
   "client": [
-    "ChatComponentMixin_RemoveStatusBar",
+    "ChatComponentMixin_RemoveTag",
+    "ChatComponentMixin_ShiftText",
     "ChatScreenMixin_RemoveStatusBar",
     "ClientPacketListenerMixin_RemoveToast"
   ],
