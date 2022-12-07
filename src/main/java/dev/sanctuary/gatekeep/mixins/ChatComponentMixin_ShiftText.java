@@ -11,8 +11,6 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 public class ChatComponentMixin_ShiftText {
     @ModifyArg(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/Font;drawShadow(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/util/FormattedCharSequence;FFI)I"), index = 2)
     public float shiftText(float original) {
-        // todo: this removes the head from the chat heads mod,
-        //  should be made compatible eventually
         return -1;
     }
 
