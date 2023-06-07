@@ -5,11 +5,11 @@
   "name": "gatekeep",
   "description": "Remove the bar in chat & toast showing message sign status.",
   "authors": [
-    "thirdsanctuary"
+    "jadeposting"
   ],
   "contact": {
-    "website": "https://github.com/thirdsanctuary",
-    "repo": "https://github.com/thirdsanctuary/gatekeep"
+    "website": "https://github.com/jadeposting",
+    "repo": "https://github.com/jadeposting/gatekeep"
   },
   "license": "LGPL-3.0",
   "icon": "assets/gatekeep/icon.png",
@@ -20,6 +20,6 @@
   ],
   "depends": {
     "fabricloader": ">=0.14.8",
-    "minecraft": ">=1.19.3"
+    "minecraft": ">=1.20"
   }
 }

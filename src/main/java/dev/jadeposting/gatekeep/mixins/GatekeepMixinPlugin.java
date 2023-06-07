@@ -1,4 +1,4 @@
-package dev.sanctuary.gatekeep.mixins;
+package dev.jadeposting.gatekeep.mixins;
 
 import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class GatekeepMixinPlugin implements IMixinConfigPlugin {
 
-    private static final String SHIFT_TEXT_MIXIN = "dev.sanctuary.gatekeep.mixins.ChatComponentMixin_ShiftText";
+    private static final String SHIFT_TEXT_MIXIN = "dev.jadeposting.gatekeep.mixins.ChatComponentMixin_ShiftText";
     private final Logger logger = LogManager.getLogger("Gatekeep");
 
     @Override

@@ -1,4 +1,4 @@
-package dev.sanctuary.gatekeep.mixins;
+package dev.jadeposting.gatekeep.mixins;
 
 import net.minecraft.client.GuiMessage;
 import net.minecraft.client.GuiMessageTag;
