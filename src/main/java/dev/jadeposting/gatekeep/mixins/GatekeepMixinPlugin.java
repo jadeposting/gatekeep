@@ -12,7 +12,9 @@ import java.util.Set;
 
 public class GatekeepMixinPlugin implements IMixinConfigPlugin {
 
-    private static final String SHIFT_TEXT_MIXIN = "dev.jadeposting.gatekeep.mixins.ChatComponentMixin_ShiftText";
+    private static final String PACKAGE = "dev.jadeposting.gatekeep.mixins.";
+    private static final String SHIFT_TEXT_MIXIN = PACKAGE + "ChatComponentMixin_ShiftText";
+    private static final String REMOVE_TOAST_MIXIN = PACKAGE + "ClientPacketListenerMixin_RemoveToast";
     private final Logger logger = LogManager.getLogger("Gatekeep");
 
     @Override
@@ -27,8 +29,15 @@ public class GatekeepMixinPlugin implements IMixinConfigPlugin {
 
     @Override
     public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-        if (FabricLoader.getInstance().isModLoaded("chat_heads") && mixinClassName.equals(SHIFT_TEXT_MIXIN)) {
-            this.logger.info("Disabling " + SHIFT_TEXT_MIXIN + " because chat_heads is loaded.");
+        FabricLoader fabricLoader = FabricLoader.getInstance();
+
+        if (fabricLoader.isModLoaded("shutupmojang") && mixinClassName.equals(REMOVE_TOAST_MIXIN)) {
+            this.logger.info("Disabling " + REMOVE_TOAST_MIXIN + " because ShutUpMojang is loaded.");
+            return false;
+        }
+
+        if (fabricLoader.isModLoaded("chat_heads") && mixinClassName.equals(SHIFT_TEXT_MIXIN)) {
+            this.logger.info("Disabling " + SHIFT_TEXT_MIXIN + " because Chat Heads is loaded.");
             return false;
         }
 
