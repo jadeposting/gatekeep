@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(ChatComponent.class)
 public class ChatComponentMixin_RemoveTag {
     @Redirect(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/GuiMessage$Line;tag()Lnet/minecraft/client/GuiMessageTag;"))
-    private GuiMessageTag removeTagIcon(GuiMessage.Line instance) {
+    private GuiMessageTag removeTagIcon(GuiMessage.Line messageLine) {
         return null;
     }
 }

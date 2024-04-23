@@ -3,10 +3,9 @@
   "minVersion": "0.8",
   "package": "dev.jadeposting.gatekeep.mixins",
   "compatibilityLevel": "JAVA_17",
-  "plugin": "dev.jadeposting.gatekeep.mixins.GatekeepMixinPlugin",
   "client": [
+    "ChatComponentMixin_MoveScrollbar",
     "ChatComponentMixin_RemoveTag",
-    "ChatComponentMixin_ShiftText",
     "ChatScreenMixin_RemoveIndicatorTooltip",
     "ClientPacketListenerMixin_RemoveToast"
   ],
