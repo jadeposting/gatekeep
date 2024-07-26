@@ -9,7 +9,13 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(ChatScreen.class)
 public class ChatScreenMixin_RemoveIndicatorTooltip {
-    @Redirect(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/components/ChatComponent;getMessageTagAt(DD)Lnet/minecraft/client/GuiMessageTag;"))
+    @Redirect(
+        method = "render",
+        at = @At(
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/gui/components/ChatComponent;getMessageTagAt(DD)Lnet/minecraft/client/GuiMessageTag;"
+        )
+    )
     private GuiMessageTag removeIndicatorTooltip(ChatComponent chatComponent, double x, double y) {
         return null;
     }

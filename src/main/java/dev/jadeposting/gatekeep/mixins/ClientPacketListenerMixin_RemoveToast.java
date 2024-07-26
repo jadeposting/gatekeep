@@ -1,21 +1,22 @@
 package dev.jadeposting.gatekeep.mixins;
 
+import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
+import net.minecraft.client.gui.components.toasts.Toast;
+import net.minecraft.client.gui.components.toasts.ToastComponent;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ClientPacketListener.class)
 public class ClientPacketListenerMixin_RemoveToast {
-    @Inject(
+    @WrapWithCondition(
         method = "handleLogin",
         at = @At(
-            value = "INVOKE", target = "Lnet/minecraft/client/gui/components/toasts/ToastComponent;addToast(Lnet/minecraft/client/gui/components/toasts/Toast;)V",
-            shift = At.Shift.BEFORE
-        ),
-        cancellable = true)
-    private void removeToast(CallbackInfo ci) {
-        ci.cancel();
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/gui/components/toasts/ToastComponent;addToast(Lnet/minecraft/client/gui/components/toasts/Toast;)V"
+        )
+    )
+    private boolean removeToast(ToastComponent instance, Toast toast) {
+        return false;
     }
 }
