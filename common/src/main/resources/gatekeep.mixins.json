@@ -6,7 +6,6 @@
   "client": [
     "ChatComponentMixin_MoveScrollbar",
     "ChatComponentMixin_RemoveTag",
-    "ChatScreenMixin_RemoveIndicatorTooltip",
     "ClientPacketListenerMixin_RemoveToast"
   ],
   "injectors": {

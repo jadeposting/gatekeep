@@ -30,7 +30,7 @@ dependencies {
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
 
-    runtimeOnly("me.djtheredstoner:DevAuth-fabric:1.2.1")
+    //runtimeOnly("me.djtheredstoner:DevAuth-fabric:1.2.1")
 }
 
 processResources {
