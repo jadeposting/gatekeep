@@ -8,9 +8,7 @@ modId = "gatekeep"
 version = "${version}"
 displayName = "gatekeep"
 authors = "jadeposting"
-description = '''
-Gatekeep removes all chat-signing related indicators from chat & toasts
-'''
+description = '''${description}'''
 logoFile = "icon.png"
 
 [[dependencies.gatekeep]]

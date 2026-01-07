@@ -1,14 +1,56 @@
 pluginManagement {
     repositories {
-        maven { url "https://maven.fabricmc.net/" }
-        maven { url "https://maven.architectury.dev/" }
-        maven { url "https://files.minecraftforge.net/maven/" }
         gradlePluginPortal()
+        mavenCentral()
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = 'Fabric'
+                    url = uri('https://maven.fabricmc.net')
+                }
+            }
+
+            filter {
+                includeGroup('net.fabricmc')
+                includeGroup('net.fabricmc.unpick')
+                includeGroup('fabric-loom')
+            }
+        }
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = 'Sponge'
+                    url = uri('https://repo.spongepowered.org/repository/maven-public')
+                }
+            }
+
+            filter {
+                includeGroupAndSubgroups('org.spongepowered')
+            }
+        }
+
+        exclusiveContent {
+            forRepository {
+                maven {
+                    name = 'forge'
+                    url = uri('https://maven.minecraftforge.net')
+                }
+            }
+
+            filter {
+                includeGroupAndSubgroups('net.minecraftforge')
+            }
+        }
     }
+}
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.8.0'
 }
 
 rootProject.name = 'gatekeep'
 
-include 'common'
-include 'fabric'
-include 'neoforge'
+include('common')
+include('fabric')
+include('neoforge')

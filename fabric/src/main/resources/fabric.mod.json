@@ -3,7 +3,7 @@
   "id": "gatekeep",
   "version": "${version}",
   "name": "gatekeep",
-  "description": "Gatekeep removes all chat-signing related indicators from chat & toasts",
+  "description": "${description}",
   "authors": [
     "jadeposting"
   ],
