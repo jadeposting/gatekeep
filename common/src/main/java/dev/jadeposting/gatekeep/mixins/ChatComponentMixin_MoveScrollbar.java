@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Slice;
 @Mixin(ChatComponent.class)
 public abstract class ChatComponentMixin_MoveScrollbar {
     @WrapOperation(
-        method = "render(Lnet/minecraft/client/gui/components/ChatComponent$ChatGraphicsAccess;IIZ)V",
+        method = "extractRenderState(Lnet/minecraft/client/gui/components/ChatComponent$ChatGraphicsAccess;IILnet/minecraft/client/gui/components/ChatComponent$DisplayMode;)V",
         at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/client/gui/components/ChatComponent$ChatGraphicsAccess;fill(IIIII)V",
@@ -33,7 +33,7 @@ public abstract class ChatComponentMixin_MoveScrollbar {
     }
 
     @WrapOperation(
-        method = "render(Lnet/minecraft/client/gui/components/ChatComponent$ChatGraphicsAccess;IIZ)V",
+        method = "extractRenderState(Lnet/minecraft/client/gui/components/ChatComponent$ChatGraphicsAccess;IILnet/minecraft/client/gui/components/ChatComponent$DisplayMode;)V",
         at = @At(
             value = "INVOKE",
             target = "Lnet/minecraft/client/gui/components/ChatComponent$ChatGraphicsAccess;fill(IIIII)V",

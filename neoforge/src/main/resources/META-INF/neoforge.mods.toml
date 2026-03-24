@@ -14,14 +14,14 @@ logoFile = "icon.png"
 [[dependencies.gatekeep]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.11.0-beta,)"
+versionRange = "[26.1-,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.gatekeep]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.11,)"
+versionRange = "[26.1,)"
 ordering = "NONE"
 side = "BOTH"
 

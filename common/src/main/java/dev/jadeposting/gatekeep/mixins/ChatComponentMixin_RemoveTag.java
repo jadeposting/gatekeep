@@ -1,7 +1,7 @@
 package dev.jadeposting.gatekeep.mixins;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import net.minecraft.client.GuiMessageTag;
+import net.minecraft.client.multiplayer.chat.GuiMessageTag;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -11,7 +11,7 @@ public class ChatComponentMixin_RemoveTag {
         method = "accept",
         at = @At(
             value = "INVOKE",
-            target = "Lnet/minecraft/client/GuiMessage$Line;tag()Lnet/minecraft/client/GuiMessageTag;"
+            target = "Lnet/minecraft/client/multiplayer/chat/GuiMessage$Line;tag()Lnet/minecraft/client/multiplayer/chat/GuiMessageTag;"
         )
     )
     private GuiMessageTag removeTagIcon(GuiMessageTag original) {
